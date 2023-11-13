@@ -18,9 +18,9 @@ import java.util.Map;
 public class HomeController {
     private int number;
     private List<Person> people;
-    private int id;
+
     HomeController() {
-        id = 0;
+
         number = -1;
         people = new ArrayList<>();
     }
