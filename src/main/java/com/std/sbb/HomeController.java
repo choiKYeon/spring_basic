@@ -195,6 +195,7 @@ public class HomeController {
         return  p.getId() + "번 사람이 추가되었습니다.";
 //        return "%d번 사람이 추가되었습니다.".formatted(p.getId());
     }
+    // 삭제하는 목록
     @GetMapping("/home/removePerson")
     @ResponseBody
     public String removePerson(@RequestParam(defaultValue = "0") int id){
@@ -202,6 +203,7 @@ public class HomeController {
         people.remove(person);
         return person.getId() + "번 사람이 삭제되었습니다.";
     }
+    // 수정하는 목록
     @GetMapping("/home/modifyPerson")
     @ResponseBody
     public String modifyPerson(@RequestParam(defaultValue = "0") int id, @RequestParam(defaultValue = "0") int age, @RequestParam(defaultValue = "null") String name){
@@ -215,6 +217,7 @@ public class HomeController {
     private List<Person> showPeople () {
         return people;
     }
+    // id 값을 입력해서 list에 있는 목록 찾기
     public Person findById(int id){
         for (Person people : showPeople()){
             if (people.getId() == id){
